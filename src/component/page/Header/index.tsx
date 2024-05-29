@@ -1,6 +1,6 @@
 import logo from "../../../assets/logo_bird.jpg";
 import Button from "../../common/Button";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -10,30 +10,54 @@ export default function Header() {
           <img className="h-11 w-auto" src={logo} alt="my-logo" />
         </div>
         <nav className="hidden md:flex space-x-4">
-          <Link
-            className="font-medium text-gray-950 hover:text-teal-700 border-slate-700 border-b-8"
+          <NavLink
+            className={({ isActive }) =>
+              `${
+                isActive
+                  ? "text-red-800 hover:text-red-900 border-b-8 font-semibold border-slate-700"
+                  : "text-gray-950 font-medium hover:text-teal-700"
+              }  `
+            }
             to={`home`}
           >
             Home
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to={`about`}
-            className="font-medium text-gray-950 hover:text-teal-700"
+            className={({ isActive }) =>
+              `${
+                isActive
+                  ? "text-red-800 hover:text-red-900 border-b-8 font-semibold border-slate-700"
+                  : "text-gray-950 font-medium hover:text-teal-700"
+              }  `
+            }
           >
             About
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to={`contact`}
-            className="font-medium text-gray-950 hover:text-teal-700"
+            className={({ isActive }) =>
+              `${
+                isActive
+                  ? "text-red-800 hover:text-red-900 border-b-8 font-semibold border-slate-700"
+                  : "text-gray-950 font-medium hover:text-teal-700"
+              }  `
+            }
           >
             Contact
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to={`git-hub`}
-            className="font-medium text-gray-950 hover:text-teal-700"
+            className={({ isActive }) =>
+              `${
+                isActive
+                  ? "text-red-800 hover:text-red-900 border-b-8 font-semibold border-slate-700"
+                  : "text-gray-950 font-medium hover:text-teal-700"
+              }  `
+            }
           >
             GitHub
-          </Link>
+          </NavLink>
         </nav>
         <div className="hidden md:flex space-x-4">
           <Button style="text-gray-950 hover:text-teal-700" children="Log In" />
