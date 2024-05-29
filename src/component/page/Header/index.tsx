@@ -47,7 +47,7 @@ export default function Header() {
             Contact
           </NavLink>
           <NavLink
-            to={`git-hub`}
+            to={`news`}
             className={({ isActive }) =>
               `${
                 isActive
@@ -56,7 +56,7 @@ export default function Header() {
               }  `
             }
           >
-            GitHub
+            News
           </NavLink>
         </nav>
         <div className="hidden md:flex space-x-4">
